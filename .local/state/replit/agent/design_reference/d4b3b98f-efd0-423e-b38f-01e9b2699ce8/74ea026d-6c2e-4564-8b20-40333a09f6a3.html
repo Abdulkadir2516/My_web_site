@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="tr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abdulkadir Yeşilkaya - Bilgisayar Mühendisi</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'dark-bg': '#0F172A',
+                        'dark-card': '#1E293B',
+                        'dark-text': '#E2E8F0',
+                        'dark-muted': '#94A3B8',
+                    },
+                    animation: {
+                        'fadeIn': 'fadeIn 0.6s ease-in-out',
+                        'slideUp': 'slideUp 0.6s ease-out',
+                    }
+                }
+            },
+            darkMode: 'class',
+        }
+    </script>
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideUp {
+            from { transform: translateY(30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .smooth-transition {
+            transition: all 0.3s ease-in-out;
+        }
+    </style>
+</head>
+<body class="font-inter bg-white dark:bg-dark-bg text-gray-800 dark:text-dark-text smooth-transition">
+    
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white/80 dark:bg-dark-bg/80 backdrop-blur-md z-50 border-b border-gray-200 dark:border-gray-700 smooth-transition">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0">
+                    <h1 class="text-xl font-bold text-blue-600 dark:text-blue-400">AY</h1>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#home" class="nav-link text-gray-700 dark:text-dark-text hover:text-blue-600 dark:hover:text-blue-400 px-3 py-2 text-sm font-medium smooth-transition">Ana Sayfa</a>
+                        <a href="#about" class="nav-link text-gray-700 dark:text-dark-text hover:text-blue-600 dark:hover:text-blue-400 px-3 py-2 text-sm font-medium smooth-transition">Hakkımda</a>
+                        <a href="#experience" class="nav-link text-gray-700 dark:text-dark-text hover:text-blue-600 dark:hover:text-blue-400 px-3 py-2 text-sm font-medium smooth-transition">Deneyim</a>
+                        <a href="#skills" class="nav-link text-gray-700 dark:text-dark-text hover:text-blue-600 dark:hover:text-blue-400 px-3 py-2 text-sm font-medium smooth-transition">Yetenekler</a>
+                        <a href="#contact" class="nav-link text-gray-700 dark:text-dark-text hover:text-blue-600 dark:hover:text-blue-400 px-3 py-2 text-sm font-medium smooth-transition">İletişim</a>
+                    </div>
+                </div>
+
+                <!-- Theme Toggle & Mobile Menu -->
+                <div class="flex items-center space-x-4">
+                    <button id="theme-toggle" class="p-2 rounded-lg bg-gray-100 dark:bg-dark-card hover:bg-gray-200 dark:hover:bg-gray-600 smooth-transition">
+                        <i class="fas fa-moon dark:hidden text-gray-600"></i>
+                        <i class="fas fa-sun hidden dark:block text-yellow-400"></i>
+                    </button>
+                    
+                    <!-- Mobile menu button -->
+                    <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg bg-gray-100 dark:bg-dark-card hover:bg-gray-200 dark:hover:bg-gray-600 smooth-transition">
+                        <i class="fas fa-bars text-gray-600 dark:text-dark-text"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-dark-bg border-t border-gray-200 dark:border-gray-700">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="mobile-nav-link block px-3 py-2 text-base font-medium text-gray-700 dark:text-dark-text hover:text-blue-600 dark:hover:text-blue-400 smooth-transition">Ana Sayfa</a>
+                <a href="#about" class="mobile-nav-link block px-3 py-2 text-base font-medium text-gray-700 dark:text-dark-text hover:text-blue-600 dark:hover:text-blue-400 smooth-transition">Hakkımda</a>
+                <a href="#experience" class="mobile-nav-link block px-3 py-2 text-base font-medium text-gray-700 dark:text-dark-text hover:text-blue-600 dark:hover:text-blue-400 smooth-transition">Deneyim</a>
+                <a href="#skills" class="mobile-nav-link block px-3 py-2 text-base font-medium text-gray-700 dark:text-dark-text hover:text-blue-600 dark:hover:text-blue-400 smooth-transition">Yetenekler</a>
+                <a href="#contact" class="mobile-nav-link block px-3 py-2 text-base font-medium text-gray-700 dark:text-dark-text hover:text-blue-600 dark:hover:text-blue-400 smooth-transition">İletişim</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-dark-bg dark:to-dark-card smooth-transition">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="animate-fadeIn">
+                <!-- Professional developer portrait placeholder -->
+                <div class="w-32 h-32 sm:w-40 sm:h-40 mx-auto mb-8 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center text-white text-4xl sm:text-5xl font-bold shadow-2xl">
+                    AY
+                </div>
+                
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-4">
+                    Abdulkadir Yeşilkaya
+                </h1>
+                <p class="text-xl sm:text-2xl text-gray-600 dark:text-dark-muted mb-8">
+                    Bilgisayar Mühendisi & Robotik Uzmanı
+                </p>
+                <p class="text-lg text-gray-500 dark:text-dark-muted max-w-3xl mx-auto mb-10 leading-relaxed">
+                    Yapay zeka, robotik ve sürü sistemleri alanlarında uzmanlaşmış, 3+ yıllık eğitmenlik deneyimi olan bilgisayar mühendisi. 
+                    ROS, Python ve Arduino ile inovatif projeler geliştiriyorum.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-medium smooth-transition shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                        <i class="fas fa-envelope mr-2"></i>İletişime Geç
+                    </a>
+                    <a href="#about" class="border-2 border-blue-600 text-blue-600 dark:text-blue-400 dark:border-blue-400 hover:bg-blue-600 hover:text-white px-8 py-3 rounded-lg font-medium smooth-transition">
+                        <i class="fas fa-user mr-2"></i>Hakkımda
+                    </a>
+                </div>
+
+                <!-- Social Links -->
+                <div class="flex justify-center space-x-6 mt-10">
+                    <a href="https://github.com/Abdulkadir2516" target="_blank" class="text-gray-600 dark:text-dark-muted hover:text-blue-600 dark:hover:text-blue-400 text-2xl smooth-transition">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/abdulkadir-yesilkaya" target="_blank" class="text-gray-600 dark:text-dark-muted hover:text-blue-600 dark:hover:text-blue-400 text-2xl smooth-transition">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="mailto:abdulkadir7725@gmail.com" class="text-gray-600 dark:text-dark-muted hover:text-blue-600 dark:hover:text-blue-400 text-2xl smooth-transition">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white dark:bg-dark-bg smooth-transition">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">Hakkımda</h2>
+                <div class="w-20 h-1 bg-blue-600 mx-auto"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="animate-slideUp">
+                    <!-- Professional workspace or technology image -->
+                    <img src="https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
+                         alt="Modern workspace with multiple monitors and coding environment" 
+                         class="rounded-xl shadow-2xl w-full h-auto">
+                </div>
+                
+                <div class="animate-slideUp">
+                    <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">Tutkum Teknoloji</h3>
+                    <div class="space-y-4 text-gray-600 dark:text-dark-muted leading-relaxed">
+                        <p>
+                            Son 3 yıldır çeşitli kurum ve kuruluşlarda robotik kodlama eğitimi vermekteyim ve kariyerimi 
+                            robotik ile yapay zeka alanlarında ilerletmeyi hedefliyorum.
+                        </p>
+                        <p>
+                            Üniversiteye başladığım zamandan bu yana birçok yapay zeka projesinde yer aldım. Bu projeler, 
+                            doğal dil işleme, görüntü işleme, veri bilimi ve ses işleme gibi alanlarla ilgiliydi.
+                        </p>
+                        <p>
+                            Genel olarak, yapay zeka kullanılarak geliştirilen ürünleri Jetson Nano, Raspberry Pi ve 
+                            Deneyap Kartı gibi çeşitli mini bilgisayarlarda sürdürülebilir bir ürün haline getirmeyi hedefliyorum.
+                        </p>
+                    </div>
+
+                    <!-- Education Cards -->
+                    <div class="mt-8 space-y-4">
+                        <div class="bg-gray-50 dark:bg-dark-card p-4 rounded-lg smooth-transition">
+                            <div class="flex items-center mb-2">
+                                <i class="fas fa-graduation-cap text-blue-600 mr-3"></i>
+                                <h4 class="font-semibold text-gray-900 dark:text-white">Balıkesir Üniversitesi</h4>
+                            </div>
+                            <p class="text-gray-600 dark:text-dark-muted">Bilgisayar Mühendisliği • 2021-2024 • GANO: 2.78</p>
+                        </div>
+                        
+                        <div class="bg-gray-50 dark:bg-dark-card p-4 rounded-lg smooth-transition">
+                            <div class="flex items-center mb-2">
+                                <i class="fas fa-graduation-cap text-blue-600 mr-3"></i>
+                                <h4 class="font-semibold text-gray-900 dark:text-white">Uludağ Üniversitesi</h4>
+                            </div>
+                            <p class="text-gray-600 dark:text-dark-muted">Bilgisayar Programcılığı • 2019-2021 • GANO: 3.28</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-gray-50 dark:bg-dark-card smooth-transition">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">Deneyimlerim</h2>
+                <div class="w-20 h-1 bg-blue-600 mx-auto"></div>
+            </div>
+
+            <!-- Timeline -->
+            <div class="relative">
+                <!-- Timeline line -->
+                <div class="absolute left-4 md:left-1/2 transform md:-translate-x-px h-full w-0.5 bg-blue-600"></div>
+
+                <!-- Experience Items -->
+                <div class="space-y-12">
+                    <!-- Current Position -->
+                    <div class="relative flex items-center md:justify-between">
+                        <div class="flex items-center md:w-5/12">
+                            <div class="flex-shrink-0 w-8 h-8 bg-blue-600 rounded-full border-4 border-white dark:border-dark-card flex items-center justify-center z-10">
+                                <i class="fas fa-briefcase text-white text-xs"></i>
+                            </div>
+                            <div class="ml-6 md:ml-0 md:text-right md:pr-8">
+                                <div class="bg-white dark:bg-dark-bg p-6 rounded-lg shadow-lg smooth-transition">
+                                    <span class="text-blue-600 font-semibold text-sm">2024 - Devam Ediyor</span>
+                                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mt-1">Sürü Sistemleri Uzmanı</h3>
+                                    <p class="text-gray-600 dark:text-dark-muted font-medium">Tusmec Robotik</p>
+                                    <p class="text-gray-500 dark:text-dark-muted mt-2 text-sm leading-relaxed">
+                                        ROS, Gazebo ve ArduPilot kullanarak farklı İKA ve İHA'ları heterojen ve otonom bir yapıda 
+                                        kullanabilmek amacıyla projeler geliştiriyorum.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Teaching Position -->
+                    <div class="relative flex items-center md:justify-between">
+                        <div class="flex items-center md:w-5/12 md:ml-auto">
+                            <div class="flex-shrink-0 w-8 h-8 bg-green-600 rounded-full border-4 border-white dark:border-dark-card flex items-center justify-center z-10">
+                                <i class="fas fa-chalkboard-teacher text-white text-xs"></i>
+                            </div>
+                            <div class="ml-6">
+                                <div class="bg-white dark:bg-dark-bg p-6 rounded-lg shadow-lg smooth-transition">
+                                    <span class="text-green-600 font-semibold text-sm">2021 - Devam Ediyor</span>
+                                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mt-1">Robotik Kodlama Eğitmeni</h3>
+                                    <p class="text-gray-600 dark:text-dark-muted font-medium">İhlas Vakfı & Tügva İcatHane</p>
+                                    <p class="text-gray-500 dark:text-dark-muted mt-2 text-sm leading-relaxed">
+                                        İlkokul ve ortaokul öğrencilerine Scratch, Python, mBlock, Arduino ve Micro:bit 
+                                        konularında robotik kodlama eğitimleri vermekteyim.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Internships -->
+                    <div class="relative flex items-center md:justify-between">
+                        <div class="flex items-center md:w-5/12">
+                            <div class="flex-shrink-0 w-8 h-8 bg-purple-600 rounded-full border-4 border-white dark:border-dark-card flex items-center justify-center z-10">
+                                <i class="fas fa-laptop-code text-white text-xs"></i>
+                            </div>
+                            <div class="ml-6 md:ml-0 md:text-right md:pr-8">
+                                <div class="bg-white dark:bg-dark-bg p-6 rounded-lg shadow-lg smooth-transition">
+                                    <span class="text-purple-600 font-semibold text-sm">2022 - 2023</span>
+                                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mt-1">Yazılım Geliştirici Stajyeri</h3>
+                                    <p class="text-gray-600 dark:text-dark-muted font-medium">Selvi Teknoloji & Arvis Teknoloji</p>
+                                    <p class="text-gray-500 dark:text-dark-muted mt-2 text-sm leading-relaxed">
+                                        Veri etiketleme, görüntü birleştirme, otonom sürüş ve yapay zeka projeleri. 
+                                        Trafik kaza analizi ve araç hasar tespiti sistemleri geliştirdim.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-white dark:bg-dark-bg smooth-transition">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">Yeteneklerim</h2>
+                <div class="w-20 h-1 bg-blue-600 mx-auto"></div>
+            </div>
+
+            <!-- Skills Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <div class="skill-card bg-gray-50 dark:bg-dark-card p-6 rounded-xl text-center hover:shadow-lg smooth-transition hover:-translate-y-2">
+                    <i class="fab fa-python text-4xl text-blue-500 mb-4"></i>
+                    <h3 class="font-semibold text-gray-900 dark:text-white">Python</h3>
+                </div>
+
+                <div class="skill-card bg-gray-50 dark:bg-dark-card p-6 rounded-xl text-center hover:shadow-lg smooth-transition hover:-translate-y-2">
+                    <i class="fas fa-code text-4xl text-blue-600 mb-4"></i>
+                    <h3 class="font-semibold text-gray-900 dark:text-white">C++ / C</h3>
+                </div>
+
+                <div class="skill-card bg-gray-50 dark:bg-dark-card p-6 rounded-xl text-center hover:shadow-lg smooth-transition hover:-translate-y-2">
+                    <i class="fab fa-microsoft text-4xl text-purple-600 mb-4"></i>
+                    <h3 class="font-semibold text-gray-900 dark:text-white">C#</h3>
+                </div>
+
+                <div class="skill-card bg-gray-50 dark:bg-dark-card p-6 rounded-xl text-center hover:shadow-lg smooth-transition hover:-translate-y-2">
+                    <i class="fab fa-java text-4xl text-red-600 mb-4"></i>
+                    <h3 class="font-semibold text-gray-900 dark:text-white">Java</h3>
+                </div>
+
+                <div class="skill-card bg-gray-50 dark:bg-dark-card p-6 rounded-xl text-center hover:shadow-lg smooth-transition hover:-translate-y-2">
+                    <i class="fas fa-database text-4xl text-green-600 mb-4"></i>
+                    <h3 class="font-semibold text-gray-900 dark:text-white">SQL / NoSQL</h3>
+                </div>
+
+                <div class="skill-card bg-gray-50 dark:bg-dark-card p-6 rounded-xl text-center hover:shadow-lg smooth-transition hover:-translate-y-2">
+                    <i class="fas fa-cube text-4xl text-orange-600 mb-4"></i>
+                    <h3 class="font-semibold text-gray-900 dark:text-white">3D Tasarım</h3>
+                </div>
+
+                <div class="skill-card bg-gray-50 dark:bg-dark-card p-6 rounded-xl text-center hover:shadow-lg smooth-transition hover:-translate-y-2">
+                    <i class="fas fa-robot text-4xl text-indigo-600 mb-4"></i>
+                    <h3 class="font-semibold text-gray-900 dark:text-white">ROS</h3>
+                </div>
+
+                <div class="skill-card bg-gray-50 dark:bg-dark-card p-6 rounded-xl text-center hover:shadow-lg smooth-transition hover:-translate-y-2">
+                    <i class="fas fa-microchip text-4xl text-teal-600 mb-4"></i>
+                    <h3 class="font-semibold text-gray-900 dark:text-white">Arduino</h3>
+                </div>
+            </div>
+
+            <!-- Certificates -->
+            <div class="mt-16">
+                <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-8 text-center">Sertifikalarım</h3>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-gray-50 dark:bg-dark-card p-6 rounded-lg smooth-transition">
+                        <div class="flex items-center mb-3">
+                            <i class="fas fa-certificate text-yellow-500 mr-3"></i>
+                            <h4 class="font-semibold text-gray-900 dark:text-white">Veri Bilimi İçin Python</h4>
+                        </div>
+                        <p class="text-gray-600 dark:text-dark-muted text-sm">GMKA • 2022</p>
+                    </div>
+
+                    <div class="bg-gray-50 dark:bg-dark-card p-6 rounded-lg smooth-transition">
+                        <div class="flex items-center mb-3">
+                            <i class="fas fa-certificate text-yellow-500 mr-3"></i>
+                            <h4 class="font-semibold text-gray-900 dark:text-white">İleri Seviye Python</h4>
+                        </div>
+                        <p class="text-gray-600 dark:text-dark-muted text-sm">BTK Akademi</p>
+                    </div>
+
+                    <div class="bg-gray-50 dark:bg-dark-card p-6 rounded-lg smooth-transition">
+                        <div class="flex items-center mb-3">
+                            <i class="fas fa-certificate text-yellow-500 mr-3"></i>
+                            <h4 class="font-semibold text-gray-900 dark:text-white">Veri Mühendisi AI</h4>
+                        </div>
+                        <p class="text-gray-600 dark:text-dark-muted text-sm">TrAi Academy • 2023</p>
+                    </div>
+
+                    <div class="bg-gray-50 dark:bg-dark-card p-6 rounded-lg smooth-transition">
+                        <div class="flex items-center mb-3">
+                            <i class="fas fa-certificate text-yellow-500 mr-3"></i>
+                            <h4 class="font-semibold text-gray-900 dark:text-white">DeepTech AI</h4>
+                        </div>
+                        <p class="text-gray-600 dark:text-dark-muted text-sm">Arvis Teknoloji • 2023</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-50 dark:bg-dark-card smooth-transition">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">İletişim</h2>
+                <div class="w-20 h-1 bg-blue-600 mx-auto mb-4"></div>
+                <p class="text-gray-600 dark:text-dark-muted max-w-2xl mx-auto">
+                    Bir proje fikriniz mi var? Birlikte çalışmak için benimle iletişime geçin.
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Contact Info -->
+                <div class="space-y-8">
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">İletişim Bilgileri</h3>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-center">
+                                <div class="bg-blue-100 dark:bg-blue-900 p-3 rounded-lg mr-4">
+                                    <i class="fas fa-envelope text-blue-600 dark:text-blue-400"></i>
+                                </div>
+                                <div>
+                                    <p class="font-medium text-gray-900 dark:text-white">Email</p>
+                                    <p class="text-gray-600 dark:text-dark-muted">abdulkadir7725@gmail.com</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center">
+                                <div class="bg-green-100 dark:bg-green-900 p-3 rounded-lg mr-4">
+                                    <i class="fas fa-phone text-green-600 dark:text-green-400"></i>
+                                </div>
+                                <div>
+                                    <p class="font-medium text-gray-900 dark:text-white">Telefon</p>
+                                    <p class="text-gray-600 dark:text-dark-muted">+90 530 729 7164</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center">
+                                <div class="bg-purple-100 dark:bg-purple-900 p-3 rounded-lg mr-4">
+                                    <i class="fab fa-github text-purple-600 dark:text-purple-400"></i>
+                                </div>
+                                <div>
+                                    <p class="font-medium text-gray-900 dark:text-white">GitHub</p>
+                                    <p class="text-gray-600 dark:text-dark-muted">Abdulkadir2516</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Social Media -->
+                    <div>
+                        <h4 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">Sosyal Medya</h4>
+                        <div class="flex space-x-4">
+                            <a href="https://github.com/Abdulkadir2516" target="_blank" 
+                               class="bg-gray-800 hover:bg-gray-700 text-white p-3 rounded-lg smooth-transition">
+                                <i class="fab fa-github text-xl"></i>
+                            </a>
+                            <a href="https://linkedin.com/in/abdulkadir-yesilkaya" target="_blank" 
+                               class="bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-lg smooth-transition">
+                                <i class="fab fa-linkedin text-xl"></i>
+                            </a>
+                            <a href="mailto:abdulkadir7725@gmail.com" 
+                               class="bg-green-600 hover:bg-green-700 text-white p-3 rounded-lg smooth-transition">
+                                <i class="fas fa-envelope text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="bg-white dark:bg-dark-bg p-8 rounded-xl shadow-lg smooth-transition">
+                    <form id="contact-form" class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700 dark:text-dark-text mb-2">Ad Soyad</label>
+                            <input type="text" id="name" name="name" required
+                                   class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-dark-card dark:text-white smooth-transition">
+                        </div>
+
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 dark:text-dark-text mb-2">Email</label>
+                            <input type="email" id="email" name="email" required
+                                   class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-dark-card dark:text-white smooth-transition">
+                        </div>
+
+                        <div>
+                            <label for="subject" class="block text-sm font-medium text-gray-700 dark:text-dark-text mb-2">Konu</label>
+                            <input type="text" id="subject" name="subject" required
+                                   class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-dark-card dark:text-white smooth-transition">
+                        </div>
+
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700 dark:text-dark-text mb-2">Mesaj</label>
+                            <textarea id="message" name="message" rows="5" required
+                                      class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-dark-card dark:text-white smooth-transition"></textarea>
+                        </div>
+
+                        <button type="submit" 
+                                class="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg smooth-transition flex items-center justify-center">
+                            <i class="fas fa-paper-plane mr-2"></i>
+                            Mesaj Gönder
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 dark:bg-gray-950 text-white py-8">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-gray-400">
+                © 2024 Abdulkadir Yeşilkaya. Tüm hakları saklıdır.
+            </p>
+            <p class="text-gray-500 text-sm mt-2">
+                "En iyi manzara, en zor tırmanıştan sonra gelir."
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Theme Toggle Functionality
+        (function() {
+            const themeToggle = document.getElementById('theme-toggle');
+            const html = document.documentElement;
+            
+            // Check for saved theme preference or default to light mode
+            const currentTheme = localStorage.getItem('theme') || 'light';
+            html.classList.toggle('dark', currentTheme === 'dark');
+            
+            themeToggle.addEventListener('click', function() {
+                html.classList.toggle('dark');
+                const newTheme = html.classList.contains('dark') ? 'dark' : 'light';
+                localStorage.setItem('theme', newTheme);
+            });
+        })();
+
+        // Mobile Menu Toggle
+        (function() {
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            mobileMenuBtn.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Close mobile menu when clicking on nav links
+            const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+            mobileNavLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+        })();
+
+        // Smooth Scrolling for Navigation Links
+        (function() {
+            const navLinks = document.querySelectorAll('a[href^="#"]');
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetSection = document.querySelector(targetId);
+                    
+                    if (targetSection) {
+                        const offsetTop = targetSection.offsetTop - 80; // Account for fixed header
+                        window.scrollTo({
+                            top: offsetTop,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        })();
+
+        // Contact Form Handler
+        (function() {
+            const contactForm = document.getElementById('contact-form');
+            
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // TODO: Implement actual form submission logic
+                // For now, show success message
+                alert('Teşekkürler! Mesajınız alınmıştır. En kısa sürede size dönüş yapacağım.');
+                
+                // Reset form
+                this.reset();
+            });
+        })();
+
+        // Scroll Animation Observer
+        (function() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            // Observe elements with animation classes
+            const animatedElements = document.querySelectorAll('.animate-slideUp, .animate-fadeIn, .skill-card');
+            animatedElements.forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+                observer.observe(el);
+            });
+        })();
+
+        // Active Navigation Link Highlighting
+        (function() {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-link');
+
+            function updateActiveNav() {
+                let currentSection = '';
+                
+                sections.forEach(section => {
+                    const rect = section.getBoundingClientRect();
+                    if (rect.top <= 100 && rect.bottom >= 100) {
+                        currentSection = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('text-blue-600', 'dark:text-blue-400');
+                    link.classList.add('text-gray-700', 'dark:text-dark-text');
+                    
+                    if (link.getAttribute('href') === `#${currentSection}`) {
+                        link.classList.remove('text-gray-700', 'dark:text-dark-text');
+                        link.classList.add('text-blue-600', 'dark:text-blue-400');
+                    }
+                });
+            }
+
+            window.addEventListener('scroll', updateActiveNav);
+            updateActiveNav(); // Initial call
+        })();
+    </script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://abdulkadir-yesilkaya.replit.app/sitemap.xml
+
+# Crawl Delay
+Crawl-delay: 1
+
+# Specific directives
+Allow: /assets/
+Allow: /images/
